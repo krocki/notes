@@ -1,0 +1,17 @@
+C source:
+	https://kernel.org/, mirrored on GitHub
+
+Build
+---------
+Quick-Start (Ubuntu):
+
+sudo apt-get install build-essential bc gcc-arm-linux-gnueabi git
+git clone https://github.com/torvalds/linux
+cd linux
+export ARCH=arm; export CROSS_COMPILE=arm-linux-gnueabihf-
+make xilinx_zynq_defconfig
+make -j4 uImage LOADADDR=0x00008000 modules
+
+
+Or, use a pre-built kernel from Xilinx, Digilent, Xillybus...
+

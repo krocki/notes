@@ -1,0 +1,10 @@
+root filesystem
+-contains the rest of the OS
+-mounted by the kernel during boot
+-typically separate partition from the bootloader
+
+'distributions'
+- linaro (based on ubuntu)
+- debian
+- arch
+...

@@ -1,0 +1,8 @@
+BOOT SOURCES:
+	NAND/NOR Flash
+	SD card
+		BOOT.BIN, 1st partition
+	QSPI
+	JTAG
+
+zynqboot.png

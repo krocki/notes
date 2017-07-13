@@ -1,0 +1,10 @@
+insert/remove code into running kernel
+	- .ko files - 'kernel object'
+	- dynamically linked at runtime
+	- device drivers often compiled as modules
+		automatically inserted when new devices are plugged in
+	
+Commands:
+- insmod
+- rmmod
+- modprobe - automatically resolves dependencies

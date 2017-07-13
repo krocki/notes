@@ -1,0 +1,10 @@
+Key parts of a (Zynq) Linux System
+1.Bootloader
+	–Zynq FSBL – “First Stage Bootloader”
+	–U-Boot
+2.Kernel
+3.PL Image
+4.Device Tree File
+	–A file describing the computer where Linux will run.
+5.Root Filesystem
+	–Linux Distributions

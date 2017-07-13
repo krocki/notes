@@ -1,0 +1,33 @@
+A machine-readable description of the hardware
+	–Passed to the kernel at boot time
+	–Same kernel can run on different machines
+	-Any differences in the hardware are captured in the device tree.
+	
+	Two forms of file:
+		–*.dts – Human-readable.
+		–*.dtb – “Binary blob” passed to kernel @ boot.
+		
+	Device tree compiler DTC converts dts <-> dtb.
+	
+Shows up in /proc on running kernel.
+
+DEVICE TREE
+- nodes bounded by {}
+- attributes inside nodes
+- 'compatible' attr specifies driver
+- 'reg' attr specifies memory-mapped address ranges
+
+/* From Zybo Device Tree: */
+ps7_uart_1: serial@e0001000 { 
+	clock-names = "uart_clk", "pclk";
+	clocks = <&clkc 24>, <&clkc 41>;
+	compatible = "xlnx,xuartps", "cdns,uart-r1p8";
+	current-speed = <115200>;
+	device_type = "serial";
+	interrupt-parent = <&ps7_scugic_0>;
+	interrupts = <0 50 4>;
+	port-number = <0>;
+	reg = <0xe0001000 0x1000>;
+	xlnx,has-modem = <0x0>;
+};
+
