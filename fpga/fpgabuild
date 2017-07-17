@@ -1,0 +1,5 @@
+FPGA build process
+
+1. synthesis: vhd or verilog -> physical elements
+2. place and route: elements -> FPGA place, assigns the signals in the top module to pins (set in constraints)
+3. generating bitstream
