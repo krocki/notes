@@ -1,0 +1,553 @@
+
+parallella@parallella:~/tests/browndeer-coprthr/browndeer/parallella/hello_opencl$ cd ..
+parallella@parallella:~/tests/browndeer-coprthr/browndeer/parallella$ cd ..
+parallella@parallella:~/tests/browndeer-coprthr/browndeer$ ls
+Makefile     bdt_em3d_e32   bdt_nbody_tutorial           clete_clvector_example  clopen_example    hello_opencl     mpi_lock_example
+Makefile.in  bdt_nbody      bdt_nbody_tutorial_2         clinfo.c                clvector_example  hello_stdcl      parallella
+bdt_em3d     bdt_nbody_e32  clete_clmulti_array_example  clmulti_array_example   coprthr_api       image2d_example  test
+parallella@parallella:~/tests/browndeer-coprthr/browndeer$ cd ..
+parallella@parallella:~/tests/browndeer-coprthr$ ls
+browndeer  test.sh
+parallella@parallella:~/tests/browndeer-coprthr$ cd ..
+parallella@parallella:~/tests$ cd browndeer-coprthr/
+parallella@parallella:~/tests/browndeer-coprthr$ ./test.sh
+echo quicktest
+quicktest
+make -C test_stdcl quicktest
+make[1]: Entering directory '/home/parallella/tests/browndeer-coprthr/browndeer/test/test_stdcl'
+rm -f *.o getndev.x
+rm -f test_stdcl_arg_int.c test_stdcl_arg_int4.c test_stdcl_arg_float.c test_stdcl_arg_float4.c test_stdcl_block_int.c test_stdcl_block_float.c test_stdcl_special.c test_stdcl_ndev_float4.c test_arg_int.cl test_arg_int4.cl test_arg_float.cl test_arg_float4.cl test_block_int.cl test_block_float.cl test_special.cl test_stdcl_arg_int.x test_stdcl_arg_int4.x test_stdcl_arg_float.x test_stdcl_arg_float4.x test_stdcl_block_int.x test_stdcl_block_float.x test_stdcl_special.x test_stdcl_ndev_float4.x
+cc -g -O2 -g  -I/home/parallella/coprthr/include -I/usr/local/browndeer/include -o getndev.x ./src/getndev.c -lm -lelf -lclelf -L/usr/local/browndeer/lib -lstdcl -L/home/parallella/coprthr/src/libocl -locl
+./scripts/gen_cl_test_arg_int.pl 6 > test_arg_int.cl
+./scripts/gen_cl_test_arg_int4.pl 6 > test_arg_int4.cl
+./scripts/gen_cl_test_arg_float.pl 6 > test_arg_float.cl
+./scripts/gen_cl_test_arg_float4.pl 6 > test_arg_float4.cl
+./scripts/gen_cl_test_block_int.pl 6 > test_block_int.cl
+./scripts/gen_cl_test_block_float.pl 6 > test_block_float.cl
+./scripts/gen_cl_test_special.pl 6 > test_special.cl
+./scripts/gen_c_test_stdcl_arg_int.pl 6 > test_stdcl_arg_int.c
+cc -g -O2 -g  -I/home/parallella/coprthr/include -I/usr/local/browndeer/include -o test_stdcl_arg_int.x test_stdcl_arg_int.c  -lm -lelf -lclelf -L/usr/local/browndeer/lib -lstdcl -L/home/parallella/coprthr/src/libocl -locl
+./scripts/gen_c_test_stdcl_arg_int4.pl 6 > test_stdcl_arg_int4.c
+cc -g -O2 -g  -I/home/parallella/coprthr/include -I/usr/local/browndeer/include -o test_stdcl_arg_int4.x test_stdcl_arg_int4.c  -lm -lelf -lclelf -L/usr/local/browndeer/lib -lstdcl -L/home/parallella/coprthr/src/libocl -locl
+./scripts/gen_c_test_stdcl_arg_float.pl 6 > test_stdcl_arg_float.c
+cc -g -O2 -g  -I/home/parallella/coprthr/include -I/usr/local/browndeer/include -o test_stdcl_arg_float.x test_stdcl_arg_float.c  -lm -lelf -lclelf -L/usr/local/browndeer/lib -lstdcl -L/home/parallella/coprthr/src/libocl -locl
+./scripts/gen_c_test_stdcl_arg_float4.pl 6 > test_stdcl_arg_float4.c
+cc -g -O2 -g  -I/home/parallella/coprthr/include -I/usr/local/browndeer/include -o test_stdcl_arg_float4.x test_stdcl_arg_float4.c  -lm -lelf -lclelf -L/usr/local/browndeer/lib -lstdcl -L/home/parallella/coprthr/src/libocl -locl
+./scripts/gen_c_test_stdcl_block_int.pl 6 > test_stdcl_block_int.c
+cc -g -O2 -g  -I/home/parallella/coprthr/include -I/usr/local/browndeer/include -o test_stdcl_block_int.x test_stdcl_block_int.c  -lm -lelf -lclelf -L/usr/local/browndeer/lib -lstdcl -L/home/parallella/coprthr/src/libocl -locl
+./scripts/gen_c_test_stdcl_block_float.pl 6 > test_stdcl_block_float.c
+cc -g -O2 -g  -I/home/parallella/coprthr/include -I/usr/local/browndeer/include -o test_stdcl_block_float.x test_stdcl_block_float.c  -lm -lelf -lclelf -L/usr/local/browndeer/lib -lstdcl -L/home/parallella/coprthr/src/libocl -locl
+./scripts/gen_c_test_stdcl_special.pl 6 > test_stdcl_special.c
+cc -g -O2 -g  -I/home/parallella/coprthr/include -I/usr/local/browndeer/include -o test_stdcl_special.x test_stdcl_special.c  -lm -lelf -lclelf -L/usr/local/browndeer/lib -lstdcl -L/home/parallella/coprthr/src/libocl -locl
+./scripts/gen_c_test_stdcl_ndev_float4.pl 6 > test_stdcl_ndev_float4.c
+cc -g -O2 -g  -I/home/parallella/coprthr/include -I/usr/local/browndeer/include -o test_stdcl_ndev_float4.x test_stdcl_ndev_float4.c  -lm -lelf -lclelf -L/usr/local/browndeer/lib -lstdcl -L/home/parallella/coprthr/src/libocl -locl
+EPIPHANY_PLATFORM="Parallella" \
+        ./scripts/run_quick_tests.sh test_stdcl_arg_int.x test_stdcl_arg_int4.x test_stdcl_arg_float.x test_stdcl_arg_float4.x test_stdcl_block_int.x test_stdcl_block_float.x test_stdcl_special.x test_stdcl_ndev_float4.x
+
+CHECK ENVIRONMENT ...
+
+RUNNING TESTS ...
+./test_stdcl_arg_int.x 65536 16 (stddev 0)                              [pass]
+./test_stdcl_arg_int.x 65536 16 (stddev 1)                              [pass]
+./test_stdcl_arg_int.x 65536 16 (stdcpu 0)                              [pass]
+./test_stdcl_arg_int.x 65536 16 (stdacc 0)                              [pass]
+./test_stdcl_arg_int4.x 65536 16 (stddev 0)                             [pass]
+./test_stdcl_arg_int4.x 65536 16 (stddev 1)                             [pass]
+./test_stdcl_arg_int4.x 65536 16 (stdcpu 0)                             [pass]
+./test_stdcl_arg_int4.x 65536 16 (stdacc 0)                             [pass]
+./test_stdcl_arg_float.x 65536 16 (stddev 0)                            [pass]
+./test_stdcl_arg_float.x 65536 16 (stddev 1)                            [pass]
+./test_stdcl_arg_float.x 65536 16 (stdcpu 0)                            [pass]
+./test_stdcl_arg_float.x 65536 16 (stdacc 0)                            [pass]
+./test_stdcl_arg_float4.x 65536 16 (stddev 0)                           [pass]
+./test_stdcl_arg_float4.x 65536 16 (stddev 1)                           [pass]
+./test_stdcl_arg_float4.x 65536 16 (stdcpu 0)                           [pass]
+./test_stdcl_arg_float4.x 65536 16 (stdacc 0)                           [pass]
+./test_stdcl_block_int.x 65536 16 (stddev 0)                            [pass]
+./test_stdcl_block_int.x 65536 16 (stddev 1)                            [pass]
+./test_stdcl_block_int.x 65536 16 (stdcpu 0)                            [pass]
+./test_stdcl_block_int.x 65536 16 (stdacc 0)                            [pass]
+./test_stdcl_block_float.x 65536 16 (stddev 0)                          [pass]
+./test_stdcl_block_float.x 65536 16 (stddev 1)                          [pass]
+./test_stdcl_block_float.x 65536 16 (stdcpu 0)                          [pass]
+./test_stdcl_block_float.x 65536 16 (stdacc 0)                          [pass]
+./test_stdcl_special.x 65536 16 (stddev 0)                              [pass]
+./test_stdcl_special.x 65536 16 (stddev 1)                              [pass]
+./test_stdcl_special.x 65536 16 (stdcpu 0)                              [pass]
+./test_stdcl_special.x 65536 16 (stdacc 0)                              [pass]
+./test_stdcl_ndev_float4.x 65536 16 (stddev 0)                          [pass]
+./test_stdcl_ndev_float4.x 65536 16 (stddev 1)                        [failed]
+./test_stdcl_ndev_float4.x 65536 16 (stdcpu 0)                          [pass]
+./test_stdcl_ndev_float4.x 65536 16 (stdacc 0)                          [pass]
+... TESTS COMPLETE.
+make[1]: Leaving directory '/home/parallella/tests/browndeer-coprthr/browndeer/test/test_stdcl'
+echo quicktest
+quicktest
+make -C test_libcoprthr_opencl quicktest
+make[1]: Entering directory '/home/parallella/tests/browndeer-coprthr/browndeer/test/test_libcoprthr_opencl'
+rm -f *.o *.x
+rm -f test_arg_int.c test_arg_int2.c test_arg_int4.c test_arg_uint.c test_arg_uint2.c test_arg_uint4.c test_arg_float.c test_arg_float2.c test_arg_float4.c test_arg_double.c test_arg_double2.c test_block_int.c test_block_float.c test_special.c test_arg_int.cl test_arg_int2.cl test_arg_int4.cl test_arg_uint.cl test_arg_uint2.cl test_arg_uint4.cl test_arg_float.cl test_arg_float2.cl test_arg_float4.cl test_arg_double.cl test_arg_double2.cl test_block_int.cl test_block_float.cl test_special.cl
+cc   -I/usr/local/browndeer/include -c clinfo.c
+clinfo.c: In function ‘main’:
+clinfo.c:12:3: warning: incompatible implicit declaration of built-in function ‘exit’
+   exit(1); \
+   ^
+clinfo.c:71:2: note: in expansion of macro ‘CHECK_ERROR’
+  CHECK_ERROR( clGetPlatformIDs(0,0,&nplatforms) );
+  ^
+clinfo.c:76:3: warning: incompatible implicit declaration of built-in function ‘exit’
+   exit(0);
+   ^
+clinfo.c:82:22: warning: incompatible implicit declaration of built-in function ‘calloc’
+   = (cl_platform_id*)calloc(nplatforms,sizeof(cl_platform_id));
+                      ^
+clinfo.c:12:3: warning: incompatible implicit declaration of built-in function ‘exit’
+   exit(1); \
+   ^
+clinfo.c:84:2: note: in expansion of macro ‘CHECK_ERROR’
+  CHECK_ERROR( clGetPlatformIDs(nplatforms,platforms,0) );
+  ^
+clinfo.c:12:3: warning: incompatible implicit declaration of built-in function ‘exit’
+   exit(1); \
+   ^
+clinfo.c:90:3: note: in expansion of macro ‘CHECK_ERROR’
+   CHECK_ERROR(
+   ^
+clinfo.c:12:3: warning: incompatible implicit declaration of built-in function ‘exit’
+   exit(1); \
+   ^
+clinfo.c:94:3: note: in expansion of macro ‘CHECK_ERROR’
+   CHECK_ERROR(
+   ^
+clinfo.c:12:3: warning: incompatible implicit declaration of built-in function ‘exit’
+   exit(1); \
+   ^
+clinfo.c:98:3: note: in expansion of macro ‘CHECK_ERROR’
+   CHECK_ERROR(
+   ^
+clinfo.c:12:3: warning: incompatible implicit declaration of built-in function ‘exit’
+   exit(1); \
+   ^
+clinfo.c:102:3: note: in expansion of macro ‘CHECK_ERROR’
+   CHECK_ERROR(
+   ^
+clinfo.c:12:3: warning: incompatible implicit declaration of built-in function ‘exit’
+   exit(1); \
+   ^
+clinfo.c:106:3: note: in expansion of macro ‘CHECK_ERROR’
+   CHECK_ERROR(
+   ^
+clinfo.c:12:3: warning: incompatible implicit declaration of built-in function ‘exit’
+   exit(1); \
+   ^
+clinfo.c:111:3: note: in expansion of macro ‘CHECK_ERROR’
+   CHECK_ERROR(
+   ^
+clinfo.c:12:3: warning: incompatible implicit declaration of built-in function ‘exit’
+   exit(1); \
+   ^
+clinfo.c:121:4: note: in expansion of macro ‘CHECK_ERROR’
+    CHECK_ERROR(
+    ^
+clinfo.c:151:14: warning: incompatible implicit declaration of built-in function ‘free’
+    if (cmdq) free(cmdq);
+              ^
+clinfo.c: In function ‘clfreport_devinfo’:
+clinfo.c:345:13: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘size_t’ [-Wformat=]
+             fprintf(fp," %ld (symmetric)\n",di->dev_max_wi_sz[0]);
+             ^
+clinfo.c:348:16: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 4 has type ‘size_t’ [-Wformat=]
+                fprintf(fp," [%d]%ld\n",i,di->dev_max_wi_sz[i]);
+                ^
+clinfo.c:352:4: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘size_t’ [-Wformat=]
+    di->dev_max_wg_sz);
+    ^
+clinfo.c:374:4: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘cl_ulong’ [-Wformat=]
+    di->dev_global_mem_sz);
+    ^
+clinfo.c:383:5: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘size_t’ [-Wformat=]
+     di->dev_img2d_max_width);
+     ^
+clinfo.c:385:5: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘size_t’ [-Wformat=]
+     di->dev_img2d_max_height);
+     ^
+clinfo.c:387:5: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘size_t’ [-Wformat=]
+     di->dev_img3d_max_width);
+     ^
+clinfo.c:389:5: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘size_t’ [-Wformat=]
+     di->dev_img3d_max_height);
+     ^
+clinfo.c:391:5: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘size_t’ [-Wformat=]
+     di->dev_img3d_max_depth);
+     ^
+clinfo.c:397:4: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘size_t’ [-Wformat=]
+    di->dev_max_param_sz);
+    ^
+clinfo.c:407:4: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘cl_ulong’ [-Wformat=]
+    di->dev_local_mem_sz);
+    ^
+cc  -I/usr/local/browndeer/include -o clinfo.x clinfo.c  -L/usr/local/browndeer/lib -lcoprthr_opencl -lm
+clinfo.c: In function ‘main’:
+clinfo.c:12:3: warning: incompatible implicit declaration of built-in function ‘exit’
+   exit(1); \
+   ^
+clinfo.c:71:2: note: in expansion of macro ‘CHECK_ERROR’
+  CHECK_ERROR( clGetPlatformIDs(0,0,&nplatforms) );
+  ^
+clinfo.c:76:3: warning: incompatible implicit declaration of built-in function ‘exit’
+   exit(0);
+   ^
+clinfo.c:82:22: warning: incompatible implicit declaration of built-in function ‘calloc’
+   = (cl_platform_id*)calloc(nplatforms,sizeof(cl_platform_id));
+                      ^
+clinfo.c:12:3: warning: incompatible implicit declaration of built-in function ‘exit’
+   exit(1); \
+   ^
+clinfo.c:84:2: note: in expansion of macro ‘CHECK_ERROR’
+  CHECK_ERROR( clGetPlatformIDs(nplatforms,platforms,0) );
+  ^
+clinfo.c:12:3: warning: incompatible implicit declaration of built-in function ‘exit’
+   exit(1); \
+   ^
+clinfo.c:90:3: note: in expansion of macro ‘CHECK_ERROR’
+   CHECK_ERROR(
+   ^
+clinfo.c:12:3: warning: incompatible implicit declaration of built-in function ‘exit’
+   exit(1); \
+   ^
+clinfo.c:94:3: note: in expansion of macro ‘CHECK_ERROR’
+   CHECK_ERROR(
+   ^
+clinfo.c:12:3: warning: incompatible implicit declaration of built-in function ‘exit’
+   exit(1); \
+   ^
+clinfo.c:98:3: note: in expansion of macro ‘CHECK_ERROR’
+   CHECK_ERROR(
+   ^
+clinfo.c:12:3: warning: incompatible implicit declaration of built-in function ‘exit’
+   exit(1); \
+   ^
+clinfo.c:102:3: note: in expansion of macro ‘CHECK_ERROR’
+   CHECK_ERROR(
+   ^
+clinfo.c:12:3: warning: incompatible implicit declaration of built-in function ‘exit’
+   exit(1); \
+   ^
+clinfo.c:106:3: note: in expansion of macro ‘CHECK_ERROR’
+   CHECK_ERROR(
+   ^
+clinfo.c:12:3: warning: incompatible implicit declaration of built-in function ‘exit’
+   exit(1); \
+   ^
+clinfo.c:111:3: note: in expansion of macro ‘CHECK_ERROR’
+   CHECK_ERROR(
+   ^
+clinfo.c:12:3: warning: incompatible implicit declaration of built-in function ‘exit’
+   exit(1); \
+   ^
+clinfo.c:121:4: note: in expansion of macro ‘CHECK_ERROR’
+    CHECK_ERROR(
+    ^
+clinfo.c:151:14: warning: incompatible implicit declaration of built-in function ‘free’
+    if (cmdq) free(cmdq);
+              ^
+clinfo.c: In function ‘clfreport_devinfo’:
+clinfo.c:345:13: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘size_t’ [-Wformat=]
+             fprintf(fp," %ld (symmetric)\n",di->dev_max_wi_sz[0]);
+             ^
+clinfo.c:348:16: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 4 has type ‘size_t’ [-Wformat=]
+                fprintf(fp," [%d]%ld\n",i,di->dev_max_wi_sz[i]);
+                ^
+clinfo.c:352:4: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘size_t’ [-Wformat=]
+    di->dev_max_wg_sz);
+    ^
+clinfo.c:374:4: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘cl_ulong’ [-Wformat=]
+    di->dev_global_mem_sz);
+    ^
+clinfo.c:383:5: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘size_t’ [-Wformat=]
+     di->dev_img2d_max_width);
+     ^
+clinfo.c:385:5: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘size_t’ [-Wformat=]
+     di->dev_img2d_max_height);
+     ^
+clinfo.c:387:5: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘size_t’ [-Wformat=]
+     di->dev_img3d_max_width);
+     ^
+clinfo.c:389:5: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘size_t’ [-Wformat=]
+     di->dev_img3d_max_height);
+     ^
+clinfo.c:391:5: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘size_t’ [-Wformat=]
+     di->dev_img3d_max_depth);
+     ^
+clinfo.c:397:4: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘size_t’ [-Wformat=]
+    di->dev_max_param_sz);
+    ^
+clinfo.c:407:4: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘cl_ulong’ [-Wformat=]
+    di->dev_local_mem_sz);
+    ^
+./scripts/gen_c_test_arg_int.pl > test_arg_int.c
+./scripts/gen_cl_test_arg_int.pl > test_arg_int.cl
+cc  -I/usr/local/browndeer/include -o test_arg_int.x test_arg_int.c  -L/usr/local/browndeer/lib -lcoprthr_opencl -lm
+test_arg_int.c: In function ‘main’:
+test_arg_int.c:44:1: warning: too many arguments for format [-Wformat-extra-args]
+ fprintf(stderr,"unrecognized option ''\n",arg);
+ ^
+test_arg_int.c:15:8: warning: too many arguments for format [-Wformat-extra-args]
+ struct stat fst; fstat(fd,&fst); \
+        ^
+test_arg_int.c:162:1: note: in expansion of macro ‘__mapfile’
+ __mapfile("test_arg_int.cl",file_sz,pfile);
+ ^
+./scripts/gen_c_test_arg_int2.pl > test_arg_int2.c
+./scripts/gen_cl_test_arg_int2.pl > test_arg_int2.cl
+cc  -I/usr/local/browndeer/include -o test_arg_int2.x test_arg_int2.c  -L/usr/local/browndeer/lib -lcoprthr_opencl -lm
+test_arg_int2.c: In function ‘main’:
+test_arg_int2.c:44:1: warning: too many arguments for format [-Wformat-extra-args]
+ fprintf(stderr,"unrecognized option ''\n",arg);
+ ^
+test_arg_int2.c:15:8: warning: too many arguments for format [-Wformat-extra-args]
+ struct stat fst; fstat(fd,&fst); \
+        ^
+test_arg_int2.c:163:1: note: in expansion of macro ‘__mapfile’
+ __mapfile("test_arg_int2.cl",file_sz,pfile);
+ ^
+./scripts/gen_c_test_arg_int4.pl > test_arg_int4.c
+./scripts/gen_cl_test_arg_int4.pl > test_arg_int4.cl
+cc  -I/usr/local/browndeer/include -o test_arg_int4.x test_arg_int4.c  -L/usr/local/browndeer/lib -lcoprthr_opencl -lm
+test_arg_int4.c: In function ‘main’:
+test_arg_int4.c:44:1: warning: too many arguments for format [-Wformat-extra-args]
+ fprintf(stderr,"unrecognized option ''\n",arg);
+ ^
+test_arg_int4.c:15:8: warning: too many arguments for format [-Wformat-extra-args]
+ struct stat fst; fstat(fd,&fst); \
+        ^
+test_arg_int4.c:163:1: note: in expansion of macro ‘__mapfile’
+ __mapfile("test_arg_int4.cl",file_sz,pfile);
+ ^
+./scripts/gen_c_test_arg_uint.pl > test_arg_uint.c
+./scripts/gen_cl_test_arg_uint.pl > test_arg_uint.cl
+cc  -I/usr/local/browndeer/include -o test_arg_uint.x test_arg_uint.c  -L/usr/local/browndeer/lib -lcoprthr_opencl -lm
+test_arg_uint.c: In function ‘main’:
+test_arg_uint.c:45:1: warning: too many arguments for format [-Wformat-extra-args]
+ fprintf(stderr,"unrecognized option ''\n",arg);
+ ^
+test_arg_uint.c:16:8: warning: too many arguments for format [-Wformat-extra-args]
+ struct stat fst; fstat(fd,&fst); \
+        ^
+test_arg_uint.c:163:1: note: in expansion of macro ‘__mapfile’
+ __mapfile("test_arg_uint.cl",file_sz,pfile);
+ ^
+./scripts/gen_c_test_arg_uint2.pl > test_arg_uint2.c
+./scripts/gen_cl_test_arg_uint2.pl > test_arg_uint2.cl
+cc  -I/usr/local/browndeer/include -o test_arg_uint2.x test_arg_uint2.c  -L/usr/local/browndeer/lib -lcoprthr_opencl -lm
+test_arg_uint2.c: In function ‘main’:
+test_arg_uint2.c:45:1: warning: too many arguments for format [-Wformat-extra-args]
+ fprintf(stderr,"unrecognized option ''\n",arg);
+ ^
+test_arg_uint2.c:16:8: warning: too many arguments for format [-Wformat-extra-args]
+ struct stat fst; fstat(fd,&fst); \
+        ^
+test_arg_uint2.c:164:1: note: in expansion of macro ‘__mapfile’
+ __mapfile("test_arg_uint2.cl",file_sz,pfile);
+ ^
+./scripts/gen_c_test_arg_uint4.pl > test_arg_uint4.c
+./scripts/gen_cl_test_arg_uint4.pl > test_arg_uint4.cl
+cc  -I/usr/local/browndeer/include -o test_arg_uint4.x test_arg_uint4.c  -L/usr/local/browndeer/lib -lcoprthr_opencl -lm
+test_arg_uint4.c: In function ‘main’:
+test_arg_uint4.c:45:1: warning: too many arguments for format [-Wformat-extra-args]
+ fprintf(stderr,"unrecognized option ''\n",arg);
+ ^
+test_arg_uint4.c:16:8: warning: too many arguments for format [-Wformat-extra-args]
+ struct stat fst; fstat(fd,&fst); \
+        ^
+test_arg_uint4.c:164:1: note: in expansion of macro ‘__mapfile’
+ __mapfile("test_arg_int4.cl",file_sz,pfile);
+ ^
+./scripts/gen_c_test_arg_float.pl > test_arg_float.c
+./scripts/gen_cl_test_arg_float.pl > test_arg_float.cl
+cc  -I/usr/local/browndeer/include -o test_arg_float.x test_arg_float.c  -L/usr/local/browndeer/lib -lcoprthr_opencl -lm
+test_arg_float.c: In function ‘main’:
+test_arg_float.c:45:1: warning: too many arguments for format [-Wformat-extra-args]
+ fprintf(stderr,"unrecognized option ''\n",arg);
+ ^
+test_arg_float.c:16:8: warning: too many arguments for format [-Wformat-extra-args]
+ struct stat fst; fstat(fd,&fst); \
+        ^
+test_arg_float.c:163:1: note: in expansion of macro ‘__mapfile’
+ __mapfile("test_arg_float.cl",file_sz,pfile);
+ ^
+./scripts/gen_c_test_arg_float2.pl > test_arg_float2.c
+./scripts/gen_cl_test_arg_float2.pl > test_arg_float2.cl
+cc  -I/usr/local/browndeer/include -o test_arg_float2.x test_arg_float2.c  -L/usr/local/browndeer/lib -lcoprthr_opencl -lm
+test_arg_float2.c: In function ‘main’:
+test_arg_float2.c:45:1: warning: too many arguments for format [-Wformat-extra-args]
+ fprintf(stderr,"unrecognized option ''\n",arg);
+ ^
+test_arg_float2.c:16:8: warning: too many arguments for format [-Wformat-extra-args]
+ struct stat fst; fstat(fd,&fst); \
+        ^
+test_arg_float2.c:164:1: note: in expansion of macro ‘__mapfile’
+ __mapfile("test_arg_float2.cl",file_sz,pfile);
+ ^
+./scripts/gen_c_test_arg_float4.pl > test_arg_float4.c
+./scripts/gen_cl_test_arg_float4.pl > test_arg_float4.cl
+cc  -I/usr/local/browndeer/include -o test_arg_float4.x test_arg_float4.c  -L/usr/local/browndeer/lib -lcoprthr_opencl -lm
+test_arg_float4.c: In function ‘main’:
+test_arg_float4.c:45:1: warning: too many arguments for format [-Wformat-extra-args]
+ fprintf(stderr,"unrecognized option ''\n",arg);
+ ^
+test_arg_float4.c:16:8: warning: too many arguments for format [-Wformat-extra-args]
+ struct stat fst; fstat(fd,&fst); \
+        ^
+test_arg_float4.c:164:1: note: in expansion of macro ‘__mapfile’
+ __mapfile("test_arg_float4.cl",file_sz,pfile);
+ ^
+./scripts/gen_c_test_arg_double.pl > test_arg_double.c
+./scripts/gen_cl_test_arg_double.pl > test_arg_double.cl
+cc  -I/usr/local/browndeer/include -o test_arg_double.x test_arg_double.c  -L/usr/local/browndeer/lib -lcoprthr_opencl -lm
+test_arg_double.c: In function ‘main’:
+test_arg_double.c:45:1: warning: too many arguments for format [-Wformat-extra-args]
+ fprintf(stderr,"unrecognized option ''\n",arg);
+ ^
+test_arg_double.c:16:8: warning: too many arguments for format [-Wformat-extra-args]
+ struct stat fst; fstat(fd,&fst); \
+        ^
+test_arg_double.c:163:1: note: in expansion of macro ‘__mapfile’
+ __mapfile("test_arg_double.cl",file_sz,pfile);
+ ^
+./scripts/gen_c_test_arg_double2.pl > test_arg_double2.c
+./scripts/gen_cl_test_arg_double2.pl > test_arg_double2.cl
+cc  -I/usr/local/browndeer/include -o test_arg_double2.x test_arg_double2.c  -L/usr/local/browndeer/lib -lcoprthr_opencl -lm
+test_arg_double2.c: In function ‘main’:
+test_arg_double2.c:45:1: warning: too many arguments for format [-Wformat-extra-args]
+ fprintf(stderr,"unrecognized option ''\n",arg);
+ ^
+test_arg_double2.c:16:8: warning: too many arguments for format [-Wformat-extra-args]
+ struct stat fst; fstat(fd,&fst); \
+        ^
+test_arg_double2.c:164:1: note: in expansion of macro ‘__mapfile’
+ __mapfile("test_arg_double2.cl",file_sz,pfile);
+ ^
+./scripts/gen_c_test_block_int.pl > test_block_int.c
+./scripts/gen_cl_test_block_int.pl > test_block_int.cl
+cc  -I/usr/local/browndeer/include -o test_block_int.x test_block_int.c  -L/usr/local/browndeer/lib -lcoprthr_opencl -lm
+test_block_int.c: In function ‘main’:
+test_block_int.c:44:1: warning: too many arguments for format [-Wformat-extra-args]
+ fprintf(stderr,"unrecognized option ''\n",arg);
+ ^
+test_block_int.c:15:8: warning: too many arguments for format [-Wformat-extra-args]
+ struct stat fst; fstat(fd,&fst); \
+        ^
+test_block_int.c:162:1: note: in expansion of macro ‘__mapfile’
+ __mapfile("test_block_int.cl",file_sz,pfile);
+ ^
+./scripts/gen_c_test_block_float.pl > test_block_float.c
+./scripts/gen_cl_test_block_float.pl > test_block_float.cl
+cc  -I/usr/local/browndeer/include -o test_block_float.x test_block_float.c  -L/usr/local/browndeer/lib -lcoprthr_opencl -lm
+test_block_float.c: In function ‘main’:
+test_block_float.c:16:8: warning: too many arguments for format [-Wformat-extra-args]
+ struct stat fst; fstat(fd,&fst); \
+        ^
+test_block_float.c:163:1: note: in expansion of macro ‘__mapfile’
+ __mapfile("test_block_float.cl",file_sz,pfile);
+ ^
+./scripts/gen_c_test_special.pl > test_special.c
+./scripts/gen_cl_test_special.pl > test_special.cl
+cc  -I/usr/local/browndeer/include -o test_special.x test_special.c  -L/usr/local/browndeer/lib -lcoprthr_opencl -lm
+test_special.c: In function ‘main’:
+test_special.c:44:1: warning: too many arguments for format [-Wformat-extra-args]
+ fprintf(stderr,"unrecognized option ''\n",arg);
+ ^
+test_special.c:15:8: warning: too many arguments for format [-Wformat-extra-args]
+ struct stat fst; fstat(fd,&fst); \
+        ^
+test_special.c:108:1: note: in expansion of macro ‘__mapfile’
+ __mapfile("test_special.cl",file_sz,pfile);
+ ^
+./clinfo.x
+coprthr-1.6.2 (Freewill)
+[5472] clinfo: report OpenCL platform and device information: 127.0.1.1
+[5472] nplatforms1
+[5472] clinfo: Number of platforms found = 1
+[5472] clinfo: platform 0:
+[5472] clinfo: CL_PLATFORM_PROFILE = <profile>
+[5472] clinfo: CL_PLATFORM_VERSION = coprthr-1.6-CURRENT (Freewill)
+[5472] clinfo: CL_PLATFORM_NAME = coprthr
+[5472] clinfo: CL_PLATFORM_VENDOR = Brown Deer Technology, LLC.
+[5472] clinfo: CL_PLATFORM_EXTENSIONS = cl_khr_icd
+[5472] clinfo: Number of devices found for this platform = 2
+clinfo: device 0:
+clinfo: CL_DEVICE_TYPE =  CPU
+clinfo: CL_DEVICE_VENDOR_ID = 0
+clinfo: CL_DEVICE_MAX_COMPUTE_UNITS = 1
+clinfo: CL_DEVICE_MAX_WORK_ITEM_DIMENSIONS = 3
+clinfo: CL_DEVICE_MAX_WORK_ITEM_SIZES =  1 (symmetric)
+clinfo: CL_DEVICE_MAX_WORK_GROUP_SIZE = 64
+clinfo: CL_DEVICE_PREFERRED_VECTOR_WIDTH_CHAR = 8
+clinfo: CL_DEVICE_PREFERRED_VECTOR_WIDTH_SHORT = 4
+clinfo: CL_DEVICE_PREFERRED_VECTOR_WIDTH_INT = 2
+clinfo: CL_DEVICE_PREFERRED_VECTOR_WIDTH_LONG = 1
+clinfo: CL_DEVICE_PREFERRED_VECTOR_WIDTH_FLOAT = 2
+clinfo: CL_DEVICE_PREFERRED_VECTOR_WIDTH_DOUBLE = 1
+clinfo: CL_DEVICE_MAX_CLOCK_FREQUENCY = 0
+clinfo: CL_DEVICE_ADDRESS_BITS = 0x40
+clinfo: CL_DEVICE_GLOBAL_MEM_SZ = 861960000
+clinfo: CL_DEVICE_IMAGE_SUPPORT = false
+clinfo: CL_DEVICE_MAX_PARAMETER_SIZE = 256
+clinfo: CL_DEVICE_MEM_BASE_ADDRESS_ALIGN = 64
+clinfo: CL_DEVICE_NAME = ARMv7 Processor rev 0 (v7l)
+clinfo: CL_DEVICE_VENDOR = Xilinx
+clinfo: CL_DEVICE_VERSION = unknown
+clinfo: CL_DRIVER_VERSION = unknown
+clinfo: CL_DEVICE_LOCAL_MEM_SIZE = 0
+clinfo: device 0:
+clinfo: CL_DEVICE_TYPE =  ACCELERATOR
+clinfo: CL_DEVICE_VENDOR_ID = 0
+clinfo: CL_DEVICE_MAX_COMPUTE_UNITS = 16
+clinfo: CL_DEVICE_MAX_WORK_ITEM_DIMENSIONS = 3
+clinfo: CL_DEVICE_MAX_WORK_ITEM_SIZES =  1 (symmetric)
+clinfo: CL_DEVICE_MAX_WORK_GROUP_SIZE = 16
+clinfo: CL_DEVICE_PREFERRED_VECTOR_WIDTH_CHAR = 4
+clinfo: CL_DEVICE_PREFERRED_VECTOR_WIDTH_SHORT = 2
+clinfo: CL_DEVICE_PREFERRED_VECTOR_WIDTH_INT = 1
+clinfo: CL_DEVICE_PREFERRED_VECTOR_WIDTH_LONG = 1
+clinfo: CL_DEVICE_PREFERRED_VECTOR_WIDTH_FLOAT = 1
+clinfo: CL_DEVICE_PREFERRED_VECTOR_WIDTH_DOUBLE = 1
+clinfo: CL_DEVICE_MAX_CLOCK_FREQUENCY = 0
+clinfo: CL_DEVICE_ADDRESS_BITS = 0x20
+clinfo: CL_DEVICE_GLOBAL_MEM_SZ = 32505856
+clinfo: CL_DEVICE_IMAGE_SUPPORT = false
+clinfo: CL_DEVICE_MAX_PARAMETER_SIZE = 256
+clinfo: CL_DEVICE_MEM_BASE_ADDRESS_ALIGN = 32
+clinfo: CL_DEVICE_NAME = E16G Needham
+clinfo: CL_DEVICE_VENDOR = Adapteva, Inc.
+clinfo: CL_DEVICE_VERSION = unknown
+clinfo: CL_DRIVER_VERSION = unknown
+clinfo: CL_DEVICE_LOCAL_MEM_SIZE = 32768
+[5472] clinfo: clCreateContext 0x27c10 (0)
+[5472] clinfo: clCreateCommandQueue [0] 0x27c60 (0)
+[5472] clmesg info: cmdsched.c(86): cmdqx1: run
+[5472] clinfo: clCreateCommandQueue [1] 0x27e20 (0)
+[5472] clmesg info: cmdsched.c(86): cmdqx1: run
+[5472] clmesg info: cmdsched.c(181): cmdqx1: shutdown
+[5472] clmesg info: cmdsched.c(181): cmdqx1: shutdown
+./scripts/run_quick_tests.sh test_arg_int.x test_arg_int2.x test_arg_int4.x test_arg_uint.x test_arg_uint2.x test_arg_uint4.x test_arg_float.x test_arg_float2.x test_arg_float4.x test_arg_double.x test_arg_double2.x test_block_int.x test_block_float.x test_special.x
+
+RUNNING TESTS ...
+./test_arg_int.x 65536 16                                               [pass]
+./test_arg_int2.x 65536 16                                              [pass]
+./test_arg_int4.x 65536 16                                              [pass]
+./test_arg_uint.x 65536 16                                              [pass]
+./test_arg_uint2.x 65536 16                                             [pass]
+./test_arg_uint4.x 65536 16                                             [pass]
+./test_arg_float.x 65536 16                                             [pass]
+./test_arg_float2.x 65536 16                                            [pass]
+./test_arg_float4.x 65536 16                                            [pass]
+./test_arg_double.x 65536 16                                            [pass]
+./test_arg_double2.x 65536 16                                           [pass]
+./test_block_int.x 65536 16                                             [pass]
+./test_block_float.x 65536 16                                           [pass]
+./test_special.x 65536 16                                               [pass]
+... TESTS COMPLETE.
+make[1]: Leaving directory '/home/parallella/tests/browndeer-coprthr/browndeer/test/test_libcoprthr_opencl'
+Test returned ok but you should verify the results manually
