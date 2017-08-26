@@ -1,0 +1,41 @@
+
+./a.out:	file format Mach-O 64-bit x86-64
+
+Disassembly of section __TEXT,__text:
+__text:
+100000f70:	55 	pushq	%rbp
+100000f71:	48 89 e5 	movq	%rsp, %rbp
+100000f74:	c7 45 fc 00 00 00 00 	movl	$0, -4(%rbp)
+100000f7b:	c7 45 f8 00 00 00 00 	movl	$0, -8(%rbp)
+100000f82:	c7 45 f4 00 00 00 00 	movl	$0, -12(%rbp)
+100000f89:	83 7d f4 64 	cmpl	$100, -12(%rbp)
+100000f8d:	0f 8d 17 00 00 00 	jge	23 <_main+0x3A>
+100000f93:	8b 45 f8 	movl	-8(%rbp), %eax
+100000f96:	83 c0 01 	addl	$1, %eax
+100000f99:	89 45 f8 	movl	%eax, -8(%rbp)
+100000f9c:	8b 45 f4 	movl	-12(%rbp), %eax
+100000f9f:	83 c0 01 	addl	$1, %eax
+100000fa2:	89 45 f4 	movl	%eax, -12(%rbp)
+100000fa5:	e9 df ff ff ff 	jmp	-33 <_main+0x19>
+100000faa:	8b 45 f8 	movl	-8(%rbp), %eax
+100000fad:	5d 	popq	%rbp
+100000fae:	c3 	retq
+
+_main:
+100000f70:	55 	pushq	%rbp
+100000f71:	48 89 e5 	movq	%rsp, %rbp
+100000f74:	c7 45 fc 00 00 00 00 	movl	$0, -4(%rbp)
+100000f7b:	c7 45 f8 00 00 00 00 	movl	$0, -8(%rbp)
+100000f82:	c7 45 f4 00 00 00 00 	movl	$0, -12(%rbp)
+100000f89:	83 7d f4 64 	cmpl	$100, -12(%rbp)
+100000f8d:	0f 8d 17 00 00 00 	jge	23 <_main+0x3A>
+100000f93:	8b 45 f8 	movl	-8(%rbp), %eax
+100000f96:	83 c0 01 	addl	$1, %eax
+100000f99:	89 45 f8 	movl	%eax, -8(%rbp)
+100000f9c:	8b 45 f4 	movl	-12(%rbp), %eax
+100000f9f:	83 c0 01 	addl	$1, %eax
+100000fa2:	89 45 f4 	movl	%eax, -12(%rbp)
+100000fa5:	e9 df ff ff ff 	jmp	-33 <_main+0x19>
+100000faa:	8b 45 f8 	movl	-8(%rbp), %eax
+100000fad:	5d 	popq	%rbp
+100000fae:	c3 	retq
