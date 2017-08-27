@@ -1,0 +1,1 @@
+/Users/kmrocki/riscv/bin/riscv64-unknown-elf-g++ -march=rv64i -mabi=lp64 test.cc -o rvgnu7-rv64i-lambdatest
